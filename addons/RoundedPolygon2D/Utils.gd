@@ -1,4 +1,4 @@
-static func v2_to_v3(v2: Vector2):
+static func v2_to_v3(v2: Vector2) -> Vector3:
 	return Vector3(v2.x, v2.y, 0)
 
 static func get_2d_triangle_barycentric_coords(_point: Vector2, _a: Vector2, _b: Vector2, _c: Vector2) -> Vector3:
@@ -18,7 +18,7 @@ static func barycentric_coords_to_cartesian(triangle: PackedVector2Array, bary_c
 		cartesian_coords += triangle[i] * bary_coords[i]
 	return cartesian_coords
 
-static func mix_colors(colors: PackedColorArray, weights: PackedFloat32Array):
+static func mix_colors(colors: PackedColorArray, weights: PackedFloat32Array) -> Color:
 	if colors.size() != weights.size():
 		push_error("Mix colors parameters aren't the same size")
 		return Color.BLACK

@@ -34,16 +34,16 @@ var rounded_vertex_colors: PackedColorArray
 ## The computed uv with rounded corners.
 var rounded_uv: PackedVector2Array
 
-const RoundedPolygon2DUtils = preload("res://addons/RoundedPolygon2D/RoundedPolygon2DUtils.gd")
+const Utils = preload("res://addons/RoundedPolygon2D/Utils.gd")
 
-func _check_drawing_mode():
+func _check_drawing_mode() -> void:
 	# Toggles the default Polygon2D if rounding is not necessary
 	if corner_radius == 0 or corner_detail == 0:
 		polygons.clear()
 	else:
 		polygons = [null]
 
-func _draw():
+func _draw() -> void:
 	if polygon.size() < 3:
 		return
 
@@ -133,13 +133,13 @@ func _build_rounded_uv() -> PackedVector2Array:
 
 		for j in range(corner_detail + 1):
 			var corner_point = rounded_polygon[(i * (corner_detail + 1) + j) % rounded_polygon.size()]
-			var polygon_bary = RoundedPolygon2DUtils.get_2d_triangle_barycentric_coords(
+			var polygon_bary = Utils.get_2d_triangle_barycentric_coords(
 				corner_point,
 				polygon_triangle[0],
 				polygon_triangle[1],
 				polygon_triangle[2],
 				)
-			var uv_point = RoundedPolygon2DUtils.barycentric_coords_to_cartesian(uv_triangle, polygon_bary)
+			var uv_point = Utils.barycentric_coords_to_cartesian(uv_triangle, polygon_bary)
 			uv_point /= texture.get_size()
 			points.append(uv_point)
 
@@ -169,12 +169,12 @@ func _build_vertex_colors() -> PackedColorArray:
 		# Color each vertex using the barycentric coordenates
 		for j in range(corner_detail + 1):
 			var corner_point = rounded_polygon[(i * (corner_detail + 1) + j) % rounded_polygon.size()]
-			var bary = RoundedPolygon2DUtils.get_2d_triangle_barycentric_coords(
+			var bary = Utils.get_2d_triangle_barycentric_coords(
 				corner_point,
 				polygon_triangle[0],
 				polygon_triangle[1],
 				polygon_triangle[2],
 				)
 			var mix_weights: PackedFloat32Array = [bary[0], bary[1], bary[2]]
-			colors.append(RoundedPolygon2DUtils.mix_colors(mix_colors, mix_weights))
+			colors.append(Utils.mix_colors(mix_colors, mix_weights))
 	return colors
