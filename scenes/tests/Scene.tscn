@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://efwag48cnfuw"]
+
+[ext_resource type="Script" uid="uid://gdsdtd32sye5" path="res://addons/RoundedPolygon2D/RoundedPolygon2D.gd" id="1_jeex0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RoundedPolygon2D" type="Polygon2D" parent="."]
+position = Vector2(526, 363)
+scale = Vector2(0.365456, 0.37659)
+invert_border = 423.4
+polygon = PackedVector2Array(-686.813, 244.297, -834.574, -223.054, 93.0344, -387.69, 106.716, 148.703)
+uv = PackedVector2Array(2, 14, 2, 2, 8, 2, 14, 2, 14, 14)
+polygons = [null]
+script = ExtResource("1_jeex0")
+corner_radius = 150
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1019, 411)
+scale = Vector2(0.365456, 0.37659)
+texture_offset = Vector2(0.07, 0)
+invert_border = 423.4
+polygon = PackedVector2Array(-686.813, 244.297, -774.375, -238.987, -331.093, -127.46, 164.178, -345.203, 155.969, 119.493)
+uv = PackedVector2Array(2, 14, 2, 2, 8, 2, 14, 2, 14, 14)
+polygons = [null]
+script = ExtResource("1_jeex0")
+corner_radius = 310
+corner_detail = 2
+uniform_corners = false
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(256, -22)
+antialiased = true
+polygon = PackedVector2Array(672, 96, 704, 64, 800, 64, 832, 96, 832, 192, 800, 224, 704, 224, 672, 192)
+uv = PackedVector2Array(1.22786e-05, 32, 32, -1.49012e-07, 96, -1.43051e-06, 128, 32, 128, 96, 96, 128, 32, 128, -6.4373e-06, 96)
+vertex_colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)

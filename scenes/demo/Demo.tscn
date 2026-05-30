@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc3rnphrjrrws"]
+
+[ext_resource type="Script" uid="uid://vaugjhptw8md" path="res://scenes/demo/demo_polygon.gd" id="1_ed7fa"]
+[ext_resource type="Texture2D" uid="uid://cl3ikpmjpwnww" path="res://scenes/demo/pattern.png" id="2_ed7fa"]
+[ext_resource type="Texture2D" uid="uid://c6j7kp0anvxjf" path="res://scenes/demo/icon.svg" id="3_extu7"]
+[ext_resource type="FontFile" uid="uid://dy8fe527cj2af" path="res://scenes/demo/Lato-Black.ttf" id="4_w6v3l"]
+
+[sub_resource type="Gradient" id="Gradient_extu7"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.605, 1)
+colors = PackedColorArray(0.129412, 0.211765, 0.360784, 1, 0.152941, 0.164706, 0.278431, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6v3l"]
+gradient = SubResource("Gradient_extu7")
+fill = 1
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_658px"]
+font = ExtResource("4_w6v3l")
+font_size = 84
+font_color = Color(0.603922, 0.839216, 1, 1)
+
+[node name="Demo" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_w6v3l")
+
+[node name="RoundedPolygon2D" type="Polygon2D" parent="."]
+position = Vector2(536, 311)
+scale = Vector2(0.612688, 0.793307)
+polygon = PackedVector2Array(-700, -150, -700, 50, -350, 50, -450, -150)
+uv = PackedVector2Array(-550, 50, 99.9999, 50, -50, 300, -550, 300)
+vertex_colors = PackedColorArray(1, 0.54, 0.639667, 1, 1, 0.541176, 0.639216, 1, 1, 0.866667, 0.5, 1, 1, 0.866667, 0.501961, 1)
+script = ExtResource("1_ed7fa")
+target_radius = 101
+corner_detail = 7
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D2" type="Polygon2D" parent="."]
+position = Vector2(621, 555)
+scale = Vector2(0.612688, 0.793307)
+polygon = PackedVector2Array(-657.757, -98.3226, -700, 50, -551.667, -18.9082, -350, 50, -499.438, -170.174)
+uv = PackedVector2Array(-550, 50, 99.9999, 50, -50, 300, -550, 300)
+vertex_colors = PackedColorArray(0.766667, 1, 0.44, 1, 0.35, 0.826667, 1, 1, 0.561333, 0.53, 1, 1, 1, 0.48, 0.878667, 1, 1, 0.56, 0.34, 1)
+polygons = [null]
+script = ExtResource("1_ed7fa")
+target_radius = 40
+corner_radius = 40
+corner_detail = 7
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D3" type="Polygon2D" parent="."]
+position = Vector2(496, 223)
+scale = Vector2(0.825, 0.825)
+color = Color(0.470588, 0.611765, 1, 1)
+polygon = PackedVector2Array(-50, -50, -50, 150, 150, 150, 50, 50, 150, -50)
+uv = PackedVector2Array(-50, -50, -50, 100, 100, 100, 50, 50, 150, -50)
+script = ExtResource("1_ed7fa")
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D4" type="Polygon2D" parent="."]
+position = Vector2(976.25, 235.5)
+scale = Vector2(1, 0.9)
+color = Color(0.99, 0.85, 1, 1)
+polygon = PackedVector2Array(-200, -75, -150, -75, -150, 25, -100, 25, -100, -75, -50, -75, -50, 150, -100, 150, -100, 75, -150, 75, -150, 150, -200, 150)
+uv = PackedVector2Array(-200, -50, -150, -50, -150, 0, -100, 0, -100, -50, -49.9999, -50, -49.9999, 100, -100, 100, -100, 50, -150, 50, -150, 100, -200, 100)
+polygons = [null]
+script = ExtResource("1_ed7fa")
+target_radius = 20
+corner_radius = 10
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D5" type="Polygon2D" parent="."]
+position = Vector2(976.25, 235.5)
+scale = Vector2(1, 0.9)
+color = Color(0.99, 0.85, 1, 1)
+polygon = PackedVector2Array(0, -75, 0, 150, 50, 150, 50, -75)
+uv = PackedVector2Array(0, -50, 0, 100, 50, 100, 50, -50)
+script = ExtResource("1_ed7fa")
+target_radius = 20
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="RoundedPolygon2D6" type="Polygon2D" parent="."]
+position = Vector2(499, 158)
+texture = ExtResource("2_ed7fa")
+polygon = PackedVector2Array(-1.03485e-05, 300, 50, 350, 6.9689e-06, 400, 400, 400, 400, 450, 500, 350, 400, 250, 400, 300)
+uv = PackedVector2Array(30.3327, 287.039, 93.2941, 350, 30.3327, 412.961, 534.024, 412.961, 534.024, 475.923, 659.946, 350, 534.024, 224.077, 534.024, 287.039)
+script = ExtResource("1_ed7fa")
+target_radius = 30
+corner_detail = 7
+metadata/_custom_type_script = "uid://gdsdtd32sye5"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -436.0
+offset_top = 45.0
+offset_right = 438.0
+offset_bottom = 146.0
+grow_horizontal = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_extu7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "RoundedPolygon2D"
+label_settings = SubResource("LabelSettings_658px")
+horizontal_alignment = 1
